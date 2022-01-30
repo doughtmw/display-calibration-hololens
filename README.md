@@ -82,21 +82,29 @@ Install-Package ..\OpenCV.HoloLens.3411.0.0.nupkg -ProjectName OpenCVRuntimeComp
 ### Deploy and run the sample on the HoloLens 2
 - *Optional*: If `OpenCVRuntimeComponent` was built from source, copy `.winmd`, `.dll` and `.lib` files from `OpenCVRuntimeComponent/ARM64/(Release/Debug)/OpenCVRuntimeComponent/` to the Unity plugins directory `unity-sandbox/HoloLens2-Display-Calibration/Assets/Plugins/ARM64/` folder
 
-Open `HoloLens2-Display-Calibration` in Unity. There are several different scenes available for selection in the `Assets/Scenes/` folder, as detailed in our paper, these will determine which tracing paradigm (adjacent, direct, or calibrated) will be used for the experiment
+Open `HoloLens2-Display-Calibration` in Unity. There are several different scenes available for selection in the `Assets/Scenes/` folder, as detailed in our paper, these will determine which tracing paradigm (adjacent, direct, or calibrated) will be used for the experiment.
 
-1. `hmd adjacent`: There is no calibration procedure required, when looking at the printed trace template, you will see a virtual model augmented adjacent to the tracking target.
--	View ground truth template adjacent to paper template
+`hmd adjacent`: There is no calibration procedure required, when looking at the printed trace template, you will see a virtual model augmented adjacent to the tracking target.
 
-2. `hmd calib`: There is an additional calibration procedure required, with 10 point correspondences collected per eye. For the point collection process you need to align the tracked marker corners with the virtual on-screen reticle and press spacebar on a bluetooth or USB keyboard connected to the HoloLens 2 (or use the double-tap gesture) to collect that point correspondence. Virtual marker positions will change slightly across each calibration point correspondence. 
-- Begin calibration with your right eye (left eye closed), next calibrate left eye (right eye closed)
+`hmd calib`: There is an additional calibration procedure required, with 10 point correspondences collected per eye. For the point collection process you need to align the tracked marker corners with the virtual on-screen reticle and press spacebar on a bluetooth or USB keyboard connected to the HoloLens 2 (or use the double-tap gesture) to collect that point correspondence. Virtual marker positions will change slightly across each calibration point correspondence. Begin calibration with your right eye (left eye closed), next calibrate left eye (right eye closed).
 
-<img src="data/SampleResults/Figures/alignment.png" alt="" width="500"/>
+<img src="data/SampleResults/Figures/alignment.png" alt="" width="350"/>
 
 After completing calibration, set down the calibration object and look at the printed trace template. You should now see a virtual model augmented directly on the tracking target.
-- View ground truth template aligned with paper template
 
-3. `hmd`: There is no additional calibration required, when looking at the printed trace template, you will see a virtual model augmented directly on the tracking target.
-- View ground truth template aligned with paper template
+`hmd`: There is no additional calibration required, when looking at the printed trace template, you will see a virtual model augmented directly on the tracking target.
+
+
+There are a number of settings which can be adjusted on the `ScriptHolder` gameobject in Unity, including: 
+- Media capture profile on the HoloLens 2 (`896x504` by default) 
+- ArUco dictionary for marker generation (`6x6_250` by default)
+- Tracking type for calibration (`markers` by default) and after calibration (`custom board` by default, can also select `markers`)
+- Intrinsic parameters used (`per frame` provided intrinsics are default)
+- Marker positions of the custom board object (the corner locations of the ArUco markers)
+- A predefined transform (default is the identity transform)
+- Reticle point locations and the number of point correspondences for the left and right eye during calibration
+
+<img src="data/SampleResults/Figures/unity-scene.PNG" alt="" width="1000"/>
 
 After selecting the desired tracking scene, we can now build the scene to the device.
 - Switch build platform to `Universal Windows Platform`, select `HoloLens` for target device, and `ARM64` as the target platform
