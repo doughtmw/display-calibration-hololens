@@ -84,10 +84,10 @@ Install-Package ..\OpenCV.HoloLens.3411.0.0.nupkg -ProjectName OpenCVRuntimeComp
 
 Open `HoloLens2-Display-Calibration` in Unity. There are several different scenes available for selection in the `Assets/Scenes/` folder, as detailed in our paper, these will determine which tracing paradigm (adjacent, direct, or calibrated) will be used for the experiment
 
-#### 1. `hmd adjacent`: There is no calibration procedure required, when looking at the printed trace template, you will see a virtual model augmented adjacent to the tracking target.
+1. `hmd adjacent`: There is no calibration procedure required, when looking at the printed trace template, you will see a virtual model augmented adjacent to the tracking target.
 -	View ground truth template adjacent to paper template
 
-#### 2. `hmd calib`: There is an additional calibration procedure required, with 10 point correspondences collected per eye. For the point collection process you need to align the tracked marker corners with the virtual on-screen reticle and press spacebar on a bluetooth or USB keyboard connected to the HoloLens 2 (or use the double-tap gesture) to collect that point correspondence. Virtual marker positions will change slightly across each calibration point correspondence. 
+2. `hmd calib`: There is an additional calibration procedure required, with 10 point correspondences collected per eye. For the point collection process you need to align the tracked marker corners with the virtual on-screen reticle and press spacebar on a bluetooth or USB keyboard connected to the HoloLens 2 (or use the double-tap gesture) to collect that point correspondence. Virtual marker positions will change slightly across each calibration point correspondence. 
 - Begin calibration with your right eye (left eye closed), next calibrate left eye (right eye closed)
 
 <img src="data/SampleResults/Figures/alignment.PNG" alt="" width="500"/>
@@ -95,8 +95,7 @@ Open `HoloLens2-Display-Calibration` in Unity. There are several different scene
 After completing calibration, set down the calibration object and look at the printed trace template. You should now see a virtual model augmented directly on the tracking target.
 - View ground truth template aligned with paper template
 
-
-#### 3. `hmd`: There is no additional calibration required, when looking at the printed trace template, you will see a virtual model augmented directly on the tracking target.
+3. `hmd`: There is no additional calibration required, when looking at the printed trace template, you will see a virtual model augmented directly on the tracking target.
 - View ground truth template aligned with paper template
 
 After selecting the desired tracking scene, we can now build the scene to the device.
