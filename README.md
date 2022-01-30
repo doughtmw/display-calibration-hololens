@@ -90,7 +90,7 @@ Open `HoloLens2-Display-Calibration` in Unity. There are several different scene
 2. `hmd calib`: There is an additional calibration procedure required, with 10 point correspondences collected per eye. For the point collection process you need to align the tracked marker corners with the virtual on-screen reticle and press spacebar on a bluetooth or USB keyboard connected to the HoloLens 2 (or use the double-tap gesture) to collect that point correspondence. Virtual marker positions will change slightly across each calibration point correspondence. 
 - Begin calibration with your right eye (left eye closed), next calibrate left eye (right eye closed)
 
-<img src="data/SampleResults/Figures/alignment.PNG" alt="" width="500"/>
+<img src="data/SampleResults/Figures/alignment.png" alt="" width="500"/>
 
 After completing calibration, set down the calibration object and look at the printed trace template. You should now see a virtual model augmented directly on the tracking target.
 - View ground truth template aligned with paper template
