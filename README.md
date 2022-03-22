@@ -4,6 +4,8 @@ Point correspondence-based display calibration and ArUco marker tracking for the
 This is the accompanying GitHub repo for our paper investigating the perceptual accuracy of manual tasks using an optical see-through head-mounted display (OST-HMD) for guidance:
 - [Head-Mounted Display-Based Augmented Reality for Image-Guided Media Delivery to the Heart: A Preliminary Investigation of Perceptual Accuracy](https://www.mdpi.com/2313-433X/8/2/33/htm)
 
+![](data/SampleResults/tracking-sample.gif)
+
 ## Table of contents
 - [Project setup](#project-setup)
 - [Data](#data)
